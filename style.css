@@ -1,0 +1,1175 @@
+/* ==========================================
+   全局與基本設定
+   ========================================== */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+}
+
+body {
+  margin: 0;
+  background: #f3f0e7;
+  color: #293b30;
+  font-family: 'Noto Sans TC', sans-serif;
+  font-weight: 300;
+}
+
+/* 自訂文字反白顏色 */
+::selection {
+  background: #b77b50;
+  color: #f8f6ef;
+}
+
+.ending ::selection {
+  background: #e3decb;
+  color: #263d30;
+}
+
+/* 閱讀進度條 */
+.progress {
+  position: fixed;
+  z-index: 30;
+  top: 0;
+  left: 0;
+  height: 3px;
+  background: #b77b50;
+  width: 0;
+  transition: width 0.1s linear;
+}
+
+/* ==========================================
+   頂部導覽列
+   ========================================== */
+.topbar {
+  height: 76px;
+  padding: 0 6vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: #f3f0e7ed;
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid #293b3020;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  height: 58px;
+  font: 600 25px 'Noto Serif TC', serif;
+  letter-spacing: .12em;
+  white-space: nowrap;
+}
+
+.mascot-wrap {
+  height: 56px;
+  width: auto;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.mascot-wrap img {
+  height: 100%;
+  width: auto;
+  max-height: 54px;
+  object-fit: contain;
+  filter: drop-shadow(0 7px 8px rgba(50, 60, 40, .08));
+}
+
+nav {
+  display: flex;
+  gap: 16px;
+}
+
+nav a {
+  font-family: 'Noto Serif TC', serif;
+  font-size: 13px;
+  color: #394e3d;
+  text-decoration: none;
+  padding: 6px 14px;
+  background: #e3decb;
+  border-radius: 18px;
+  white-space: nowrap;
+  transition: all 0.25s ease;
+}
+
+nav a:hover {
+  color: #ffffff;
+  background: #b77b50;
+  transform: scale(1.06);
+  box-shadow: 0 4px 12px rgba(183, 123, 80, 0.3);
+}
+
+.top-link {
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: .15em;
+  color: #394e3d;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: color 0.25s ease;
+}
+
+.top-link:hover {
+  color: #b77b50;
+}
+
+/* ==========================================
+   Hero 首頁主視覺
+   ========================================== */
+.hero {
+  height: calc(100vh - 76px);
+  min-height: 650px;
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  padding: 5vh 11vw 9vh;
+  background: #e9e8dc;
+  overflow: hidden;
+}
+
+.hero-copy {
+  z-index: 2;
+}
+
+.eyebrow,
+.copy > small {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: .22em;
+  color: #96643d;
+}
+
+.end-content > small {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: .22em;
+  color: #d4a67a;
+}
+
+.kicker {
+  font: 16px 'Noto Serif TC', serif;
+  letter-spacing: .25em;
+  color: #637360;
+  margin: 42px 0 12px;
+}
+
+.hero h1 {
+  font: 500 clamp(42px, 6vw, 78px)/1.45 'Noto Serif TC', serif;
+  letter-spacing: .05em;
+  margin: 0;
+}
+
+.hero h1 em,
+.ending h2 em {
+  font-style: normal;
+  color: #6a8064;
+}
+
+.desc {
+  font-size: 14px;
+  line-height: 2.1;
+  color: #556356;
+  margin: 24px 0 42px;
+}
+
+.scroll,
+.next {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: .18em;
+  color: #394e3d;
+  text-decoration: none;
+  transition: color 0.25s ease;
+}
+
+.scroll:hover,
+.next:hover {
+  color: #b77b50;
+}
+
+.hero-art {
+  height: min(68vh, 570px);
+  min-height: 390px;
+  position: relative;
+  display: grid;
+  place-items: center;
+}
+
+.sun {
+  position: absolute;
+  width: 44%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: #d5b58b;
+  right: 15%;
+  top: 8%;
+  opacity: .75;
+  animation: sunPulse 7s ease-in-out infinite alternate;
+}
+
+.orbit {
+  position: absolute;
+  width: 76%;
+  height: 84%;
+  border: 1px solid #71836c80;
+  border-radius: 50%;
+  transform: rotate(25deg);
+  animation: orbitRotate 25s linear infinite;
+}
+
+.leaf-main {
+  position: absolute;
+  width: 43%;
+  height: 64%;
+  border-radius: 100% 0 100% 0;
+  background: linear-gradient(145deg, #8c9b78, #536d58);
+  transform: rotate(42deg);
+  box-shadow: 20px 20px 45px #78876c55;
+  animation: leafFloat 5s ease-in-out infinite alternate;
+}
+
+.leaf-main:after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 4%;
+  height: 95%;
+  width: 1px;
+  background: #d6d8c4;
+}
+
+.leaf-small {
+  position: absolute;
+  width: 24%;
+  height: 36%;
+  background: #b77b50;
+  border-radius: 100% 0 100% 0;
+  transform: rotate(195deg);
+  right: 15%;
+  bottom: 15%;
+  opacity: .8;
+  animation: leafSmallFloat 6s ease-in-out infinite alternate;
+}
+
+.drop {
+  position: absolute;
+  width: 65px;
+  height: 85px;
+  border-radius: 70% 0 70% 70%;
+  background: #b77b50;
+  transform: rotate(45deg);
+  left: 13%;
+  bottom: 20%;
+  animation: dropFloat 4s ease-in-out infinite alternate;
+}
+
+.hero-art > span {
+  position: absolute;
+  right: 0;
+  bottom: 7%;
+  font: 12px/1.8 'Noto Serif TC', serif;
+  letter-spacing: .18em;
+  color: #566856;
+}
+
+.hero-foot {
+  position: absolute;
+  bottom: 22px;
+  left: 11vw;
+  right: 11vw;
+  display: flex;
+  justify-content: space-between;
+  font-size: 11px;
+  letter-spacing: .18em;
+  color: #667264;
+}
+
+/* ==========================================
+   品牌前言區塊（上下柔和漸層過渡）
+   ========================================== */
+.intro {
+  padding: 110px 14vw;
+  background: linear-gradient(180deg, #e9e8dc 0%, #f8f6ef 25%, #f8f6ef 75%, #eee7d8 100%);
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  align-items: center;
+  gap: 25px;
+}
+
+.intro small {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: .2em;
+  color: #96643d;
+}
+
+.intro p {
+  font: clamp(22px, 3vw, 35px)/1.8 'Noto Serif TC', serif;
+  letter-spacing: .06em;
+  margin: 0;
+}
+
+.intro b {
+  font-weight: 500;
+  color: #637a5f;
+}
+
+/* ==========================================
+   茶葉章節通用樣式
+   ========================================== */
+.tea {
+  min-height: 100vh;
+  padding: 100px 10vw;
+  display: grid;
+  grid-template-columns: 76px 1fr 1.1fr;
+  align-items: center;
+  gap: 4vw;
+  position: relative;
+  overflow: hidden;
+  scroll-margin-top: 75px;
+}
+
+.num {
+  height: 68%;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-direction: column;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: .16em;
+  color: #5e6c5c;
+  z-index: 2;
+}
+
+.num b {
+  font: 32px 'Noto Serif TC', serif;
+  color: #394e3d;
+}
+
+.num i {
+  width: 1px;
+  flex: 1;
+  background: currentColor;
+  opacity: .4;
+}
+
+.copy {
+  max-width: 480px;
+  z-index: 2;
+}
+
+.copy h2 {
+  font: 500 clamp(36px, 4vw, 55px)/1.3 'Noto Serif TC', serif;
+  letter-spacing: .08em;
+  margin: 10px 0 28px;
+}
+
+.copy h2 em {
+  display: block;
+  font: 500 11px 'Noto Sans TC', sans-serif;
+  letter-spacing: .22em;
+  color: #6b786a;
+  margin-top: 12px;
+}
+
+.copy h3 {
+  font: 21px/1.9 'Noto Serif TC', serif;
+  letter-spacing: .05em;
+  margin: 0 0 18px;
+}
+
+.copy p {
+  font-size: 14px;
+  line-height: 2.15;
+  color: #556356;
+}
+
+/* 可點擊風味標籤與品飲筆記卡片 */
+.tags {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 24px;
+}
+
+.tags span {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  border: 1px solid #8c9984;
+  border-radius: 30px;
+  padding: 7px 14px;
+  color: #4e5e50;
+  background: rgba(255, 255, 255, 0.35);
+  user-select: none;
+  transition: all 0.25s ease;
+}
+
+.tags span::after {
+  content: '+';
+  font-size: 13px;
+  font-weight: 400;
+  opacity: 0.7;
+  transition: transform 0.25s ease;
+}
+
+.tags span:hover,
+.tags span:focus-visible {
+  border-color: #b77b50;
+  color: #293b30;
+  background: rgba(255, 255, 255, 0.7);
+  outline: none;
+}
+
+.tags span.is-active {
+  background: #b77b50;
+  border-color: #b77b50;
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(183, 123, 80, 0.28);
+}
+
+.tags span.is-active::after {
+  transform: rotate(45deg);
+  opacity: 1;
+}
+
+.tag-note {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  margin-top: 0;
+  padding: 0 18px;
+  border-left: 2px solid #b77b50;
+  background: rgba(255, 255, 255, 0.55);
+  border-radius: 0 12px 12px 0;
+  transition: max-height 0.35s ease, opacity 0.3s ease, margin-top 0.3s ease, padding 0.3s ease;
+}
+
+.tag-note.is-open {
+  max-height: 180px;
+  opacity: 1;
+  margin-top: 16px;
+  padding: 14px 18px;
+}
+
+.tag-note-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 6px;
+}
+
+.tag-note-head strong {
+  font: 500 13px 'Noto Serif TC', serif;
+  color: #394e3d;
+  letter-spacing: .06em;
+}
+
+.tag-note-head span {
+  font-size: 11px;
+  font-weight: 500;
+  color: #96643d;
+  letter-spacing: .08em;
+}
+
+.tag-note p {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.85;
+  color: #4a584b;
+}
+
+.next {
+  display: inline-block;
+  margin-top: 36px;
+}
+
+.art {
+  height: min(65vh, 550px);
+  min-height: 380px;
+  position: relative;
+  display: grid;
+  place-items: center;
+  z-index: 2;
+}
+
+.art label {
+  position: absolute;
+  bottom: 3%;
+  right: 0;
+  font-size: 11px;
+  letter-spacing: .18em;
+  color: #5c6a5c;
+}
+
+.sideword {
+  position: absolute;
+  right: 3%;
+  top: 48%;
+  writing-mode: vertical-rl;
+  font-size: 11px;
+  letter-spacing: .3em;
+  color: #4e5e50;
+  opacity: .55;
+  z-index: 2;
+}
+
+/* 捲動進場動畫（僅在 JS 載入後啟用，確保無障礙漸進增強） */
+.js-ready .reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.85s cubic-bezier(0.22, 1, 0.36, 1),
+              transform 0.85s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.js-ready .art.reveal {
+  transition-delay: 0.14s;
+}
+
+.js-ready .reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ==========================================
+   章節間柔和過渡（僅套用於 02～05 章，保留結尾深綠俐落切邊）
+   ========================================== */
+.gangkou::before,
+.red::before,
+.tie::before,
+.native::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 90px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.gangkou::before {
+  background: linear-gradient(to bottom, #eee7d8, transparent);
+}
+
+.red::before {
+  background: linear-gradient(to bottom, #e5e9e3, transparent);
+}
+
+.tie::before {
+  background: linear-gradient(to bottom, #eaded1, transparent);
+}
+
+.native::before {
+  background: linear-gradient(to bottom, #dedfd5, transparent);
+}
+
+/* ==========================================
+   五章節專屬色系與幾何插畫
+   ========================================== */
+/* Chapter 01: 東方美人茶 */
+.honey {
+  background: #eee7d8;
+}
+
+.honey-art {
+  background: radial-gradient(ellipse, #f5d8a0, #e7c18b 38%, transparent 70%);
+}
+
+.orb {
+  width: 48%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: linear-gradient(145deg, #f8e5b8, #c58a4c);
+  box-shadow: 20px 25px 50px #9e714133;
+  animation: orbPulse 3.5s ease-in-out infinite alternate;
+}
+
+.honey-art .leaf {
+  position: absolute;
+  width: 27%;
+  height: 45%;
+  background: #71845f;
+  border-radius: 100% 0 100% 0;
+  transform: rotate(35deg);
+  left: 18%;
+  top: 17%;
+  animation: honeyLeafFloat 3s ease-in-out infinite alternate;
+}
+
+.cup {
+  position: absolute;
+  width: 33%;
+  height: 18%;
+  border-radius: 10% 10% 45% 45%;
+  background: linear-gradient(#f7f1df 0 15%, #bd8147 16% 70%, #e9d9b8 71%);
+  bottom: 21%;
+  right: 15%;
+  box-shadow: 0 22px 35px #86643c33;
+  animation: cupFloat 2.8s ease-in-out infinite alternate;
+}
+
+/* Chapter 02: 港口茶 */
+.gangkou {
+  background: #e5e9e3;
+}
+
+.coast-art {
+  background: linear-gradient(160deg, #d7e1d9, #a9bdb1);
+}
+
+.coast-sun {
+  position: absolute;
+  width: 32%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: #e8c69b;
+  top: 10%;
+  right: 18%;
+  animation: coastSunPulse 3.8s ease-in-out infinite alternate;
+}
+
+.wave {
+  position: absolute;
+  width: 110%;
+  height: 33%;
+  border: 1px solid #668477;
+  border-radius: 50%;
+  transform: rotate(-18deg);
+}
+
+.w1 {
+  top: 40%;
+  left: -5%;
+  animation: waveMove1 3.2s ease-in-out infinite alternate;
+}
+
+.w2 {
+  top: 54%;
+  left: -3%;
+  border-color: #a0b7a9;
+  animation: waveMove2 3.6s ease-in-out infinite alternate;
+}
+
+.coast-leaf {
+  position: absolute;
+  width: 27%;
+  height: 43%;
+  border-radius: 100% 0 100% 0;
+  background: #536f5d;
+  transform: rotate(48deg);
+  bottom: 14%;
+  left: 33%;
+  animation: coastLeafFloat 2.8s ease-in-out infinite alternate;
+}
+
+/* Chapter 03: 紅烏龍 */
+.red {
+  background: #eaded1;
+}
+
+.red-art {
+  background: radial-gradient(ellipse, #e9c2a1, #d9aa89 50%, transparent 72%);
+}
+
+.red-disc {
+  width: 58%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #c47b4e, #8c4934);
+  animation: redDiscPulse 4s ease-in-out infinite alternate;
+}
+
+.ribbon {
+  position: absolute;
+  width: 80%;
+  height: 18%;
+  border: 1px solid #f3dfc7;
+  border-radius: 50%;
+  transform: rotate(-30deg);
+  animation: ribbonFloat 3.6s ease-in-out infinite alternate;
+}
+
+.red-cup {
+  position: absolute;
+  width: 38%;
+  height: 25%;
+  border-radius: 8% 8% 48% 48%;
+  background: linear-gradient(#eee2cf 0 25%, #a9532f 26% 68%, #eee2cf 69%);
+  bottom: 18%;
+  right: 12%;
+  box-shadow: 0 20px 30px #81513c30;
+  animation: redCupFloat 3s ease-in-out infinite alternate;
+}
+
+/* Chapter 04: 鐵觀音 */
+.tie {
+  background: #dedfd5;
+}
+
+.tie-art {
+  background: radial-gradient(ellipse, #c4c7b3, #a8b19b 52%, transparent 72%);
+}
+
+.rings {
+  width: 58%;
+  aspect-ratio: 1;
+  border: 1px solid #68765f;
+  border-radius: 50%;
+  box-shadow: inset 0 0 0 18px #a9b59b55, 0 0 0 25px #a9b59b33;
+  animation: ringsPulse 4.2s ease-in-out infinite alternate;
+}
+
+.roast {
+  position: absolute;
+  width: 70%;
+  height: 1px;
+  background: #64735e;
+  transform: rotate(35deg);
+}
+
+.r1 {
+  top: 35%;
+  animation: roastLine1 3.8s ease-in-out infinite alternate;
+}
+
+.r2 {
+  top: 65%;
+  transform: rotate(-35deg);
+  animation: roastLine2 3.8s ease-in-out infinite alternate;
+}
+
+.dark-leaf {
+  position: absolute;
+  width: 27%;
+  height: 43%;
+  border-radius: 100% 0 100% 0;
+  background: #354c3b;
+  transform: rotate(45deg);
+  animation: darkLeafFloat 3.4s ease-in-out infinite alternate;
+}
+
+/* Chapter 05: 台灣原生茶 */
+.native {
+  background: #e4e8dd;
+}
+
+.native-art {
+  background: radial-gradient(ellipse, #c8d1bb, #aebda6 55%, transparent 74%);
+}
+
+.moon {
+  position: absolute;
+  width: 38%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: #e7d7b6;
+  top: 8%;
+  right: 17%;
+  animation: moonPulse 4.5s ease-in-out infinite alternate;
+}
+
+.stem {
+  position: absolute;
+  width: 2px;
+  height: 75%;
+  background: #526c54;
+  transform: rotate(32deg);
+  transform-origin: bottom center;
+  animation: stemSway 3.8s ease-in-out infinite alternate;
+}
+
+.native-leaf {
+  position: absolute;
+  width: 24%;
+  height: 36%;
+  background: #5e795d;
+  border-radius: 100% 0 100% 0;
+}
+
+.l1 {
+  top: 22%;
+  left: 24%;
+  transform: rotate(5deg);
+  animation: nativeLeaf1 3.2s ease-in-out infinite alternate;
+}
+
+.l2 {
+  top: 39%;
+  right: 19%;
+  transform: rotate(185deg);
+  background: #7e946e;
+  animation: nativeLeaf2 3s ease-in-out infinite alternate;
+}
+
+.l3 {
+  bottom: 12%;
+  left: 39%;
+  transform: rotate(5deg);
+  background: #3f6048;
+  opacity: 0.75;
+  animation: nativeLeaf3 2.6s ease-in-out infinite alternate;
+}
+
+/* ==========================================
+   頁尾與結尾區塊
+   ========================================== */
+.ending {
+  min-height: 95vh;
+  background: #263d30;
+  color: #f1eee4;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+  padding: 13vh 8vw 28px;
+  scroll-margin-top: 75px;
+  position: relative;
+}
+
+.end-content {
+  margin: auto;
+  z-index: 2;
+}
+
+.end-logo {
+  font: 500 clamp(52px, 8vw, 100px) 'Noto Serif TC', serif;
+  letter-spacing: .12em;
+  margin: 44px 0 24px;
+}
+
+.ending h2 {
+  font: 400 clamp(28px, 4vw, 48px)/1.8 'Noto Serif TC', serif;
+  letter-spacing: .08em;
+}
+
+.ending h2 em {
+  color: #c2cdb7;
+}
+
+.ending p {
+  font-size: 14px;
+  line-height: 2.15;
+  color: #cbd5c9;
+  margin: 25px 0 45px;
+}
+
+.ending a,
+.ending a:visited {
+  display: inline-block;
+  color: #263d30;
+  background: #e3decb;
+  text-decoration: none;
+  padding: 13px 30px;
+  border-radius: 30px;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: .18em;
+  transition: all 0.25s ease;
+}
+
+.ending a:hover {
+  background: #b77b50;
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+}
+
+.ending .footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  border-top: 1px solid #ffffff25;
+  padding-top: 24px;
+  font-size: 11px;
+  letter-spacing: .16em;
+  color: #b8c4b7;
+  z-index: 2;
+}
+
+/* ==========================================
+   KEYFRAMES 動畫集錦
+   ========================================== */
+@keyframes orbitRotate {
+  from { transform: rotate(25deg); }
+  to { transform: rotate(385deg); }
+}
+
+@keyframes leafFloat {
+  0% { transform: rotate(42deg) translateY(0px); }
+  100% { transform: rotate(45deg) translateY(-12px); }
+}
+
+@keyframes leafSmallFloat {
+  0% { transform: rotate(195deg) translateY(0px); }
+  100% { transform: rotate(190deg) translateY(8px); }
+}
+
+@keyframes dropFloat {
+  0% { transform: rotate(45deg) translateY(0px); }
+  100% { transform: rotate(45deg) translateY(-6px); }
+}
+
+@keyframes sunPulse {
+  0% { transform: scale(1); opacity: 0.75; }
+  100% { transform: scale(1.05); opacity: 0.88; }
+}
+
+@keyframes orbPulse {
+  0% { transform: scale(1) translateY(0); }
+  100% { transform: scale(1.12) translateY(-15px); }
+}
+
+@keyframes honeyLeafFloat {
+  0% { transform: rotate(30deg) translateY(0) scale(1); }
+  100% { transform: rotate(45deg) translateY(-25px) scale(1.08); }
+}
+
+@keyframes cupFloat {
+  0% { transform: translateY(0) rotate(0deg); }
+  100% { transform: translateY(-20px) rotate(-4deg); }
+}
+
+@keyframes coastSunPulse {
+  0% { transform: scale(1) translateY(0); }
+  100% { transform: scale(1.1) translateY(-12px); }
+}
+
+@keyframes waveMove1 {
+  0% { transform: rotate(-18deg) translate(0, 0); }
+  100% { transform: rotate(-14deg) translate(15px, -10px); }
+}
+
+@keyframes waveMove2 {
+  0% { transform: rotate(-18deg) translate(0, 0); }
+  100% { transform: rotate(-22deg) translate(-15px, 10px); }
+}
+
+@keyframes coastLeafFloat {
+  0% { transform: rotate(42deg) translateY(0) scale(1); }
+  100% { transform: rotate(55deg) translateY(-22px) scale(1.06); }
+}
+
+@keyframes redDiscPulse {
+  0% { transform: scale(1) translateY(0); }
+  100% { transform: scale(1.08) translateY(-10px); }
+}
+
+@keyframes ribbonFloat {
+  0% { transform: rotate(-30deg) scale(1); }
+  100% { transform: rotate(-22deg) scale(1.05); }
+}
+
+@keyframes redCupFloat {
+  0% { transform: translateY(0) rotate(0deg); }
+  100% { transform: translateY(-16px) rotate(3deg); }
+}
+
+@keyframes ringsPulse {
+  0% { transform: scale(1); opacity: 0.85; }
+  100% { transform: scale(1.07); opacity: 1; }
+}
+
+@keyframes roastLine1 {
+  0% { transform: rotate(35deg) translate(0, 0); }
+  100% { transform: rotate(39deg) translate(6px, -6px); }
+}
+
+@keyframes roastLine2 {
+  0% { transform: rotate(-35deg) translate(0, 0); }
+  100% { transform: rotate(-39deg) translate(-6px, 6px); }
+}
+
+@keyframes darkLeafFloat {
+  0% { transform: rotate(45deg) translateY(0) scale(1); }
+  100% { transform: rotate(52deg) translateY(-14px) scale(1.05); }
+}
+
+@keyframes moonPulse {
+  0% { transform: scale(1); }
+  100% { transform: scale(1.08) translateY(-8px); }
+}
+
+@keyframes stemSway {
+  0% { transform: rotate(32deg); }
+  100% { transform: rotate(36deg); }
+}
+
+@keyframes nativeLeaf1 {
+  0% { transform: rotate(5deg) translateY(0); }
+  100% { transform: rotate(12deg) translateY(-16px); }
+}
+
+@keyframes nativeLeaf2 {
+  0% { transform: rotate(185deg) translateY(0); }
+  100% { transform: rotate(172deg) translateY(-14px); }
+}
+
+@keyframes nativeLeaf3 {
+  0% { transform: rotate(5deg) translateY(0) scale(1); }
+  100% { transform: rotate(-5deg) translateY(-20px) scale(1.05); }
+}
+
+/* ==========================================
+   RWD 響應式佈局
+   ========================================== */
+@media (max-width: 960px) {
+  nav { gap: 8px; }
+  nav a { font-size: 12px; padding: 5px 10px; }
+  .tea {
+    grid-template-columns: 56px 1fr 1fr;
+    padding-left: 7vw;
+    padding-right: 7vw;
+    gap: 2.5vw;
+  }
+}
+
+@media (max-width: 680px) {
+  .topbar {
+    height: auto;
+    min-height: 68px;
+    padding: 12px 6vw;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .logo { height: 45px; }
+  .mascot-wrap { height: 42px; width: auto; margin: 0; }
+  nav {
+    order: 3;
+    width: 100%;
+    overflow-x: auto;
+    gap: 10px;
+    padding: 5px 0;
+  }
+  .top-link { font-size: 11px; }
+  .hero {
+    height: auto;
+    min-height: 850px;
+    grid-template-columns: 1fr;
+    padding: 65px 8vw 80px;
+  }
+  .kicker { margin-top: 28px; }
+  .hero-art { height: 360px; min-height: 0; }
+  .hero-foot { left: 8vw; right: 8vw; font-size: 10px; }
+  .intro {
+    padding: 65px 9vw;
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+  .intro p { font-size: 24px; }
+  .tea {
+    min-height: 0;
+    padding: 78px 9vw 70px;
+    grid-template-columns: 44px 1fr;
+    gap: 0 16px;
+  }
+  .num {
+    grid-row: 1 / 3;
+    min-height: 390px;
+    height: 100%;
+  }
+  .copy { grid-column: 2; }
+  .copy h2 { font-size: 40px; }
+  .copy h3 { font-size: 19px; }
+  .art {
+    grid-column: 2;
+    height: 310px;
+    min-height: 0;
+    margin-top: 25px;
+  }
+  .sideword { display: none; }
+  .next { margin-top: 30px; }
+  .ending { min-height: 780px; padding: 95px 8vw 25px; }
+  .end-logo { margin: 38px 0 20px; }
+  .ending .footer-bottom {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+/* ==========================================
+   自訂動態茶露鼠標
+   ========================================== */
+body, a, button, .tags span {
+  cursor: none !important;
+}
+
+.cursor-dot,
+.cursor-ring {
+  display: block !important;
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 9999;
+  will-change: transform;
+}
+
+.cursor-dot {
+  width: 10px;
+  height: 12px;
+  margin: -6px 0 0 -5px;
+  background: #b77b50;
+  border-radius: 70% 0 70% 70%;
+  transition: background-color 0.25s ease;
+}
+
+.cursor-ring {
+  width: 36px;
+  height: 36px;
+  margin: -18px 0 0 -18px;
+  border: 1.5px solid rgba(183, 123, 80, 0.7);
+  border-radius: 50%;
+  transition: width 0.3s ease, height 0.3s ease, margin 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.cursor-ring.is-hover {
+  width: 58px;
+  height: 58px;
+  margin: -29px 0 0 -29px;
+  background-color: rgba(183, 123, 80, 0.16);
+  border-color: #b77b50;
+}
+
+.cursor-dot.is-hover {
+  background-color: #394e3d;
+}
+
+@media (hover: none) and (pointer: coarse) {
+  body, a, button, .tags span {
+    cursor: auto !important;
+  }
+  .cursor-dot,
+  .cursor-ring {
+    display: none !important;
+  }
+}
+
+/* ==========================================
+   動態無障礙支援（減少動態效果偏好設定）
+   ========================================== */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

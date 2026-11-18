@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>茶葉 × 篇章 | CHApter</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500&family=Noto+Serif+TC:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- 自訂動態鼠標圖層 -->
+  <div class="cursor-dot" aria-hidden="true"></div>
+  <div class="cursor-ring" aria-hidden="true"></div>
+
+  <!-- 閱讀進度條 -->
+  <div class="progress" aria-hidden="true"></div>
+
+  <!-- 頂部導覽列 -->
+  <header class="topbar">
+    <div class="logo">
+      <div class="mascot-wrap">
+        <img src="chapter-logo.png" alt="CHAPTER Logo">
+      </div>
+    </div>
+    <nav aria-label="茶葉篇章導覽">
+      <a href="#honey">東方美人茶</a>
+      <a href="#gangkou">港口茶</a>
+      <a href="#red">紅烏龍</a>
+      <a href="#tie">鐵觀音</a>
+      <a href="#native">台灣原生茶</a>
+    </nav>
+    <a href="#ending" class="top-link">THE LAST PAGE ↗</a>
+  </header>
+
+  <!-- Hero 主視覺 -->
+  <section class="hero">
+    <div class="hero-copy">
+      <div class="eyebrow">A STORY BREWED IN TAIWAN</div>
+      <div class="kicker">茶葉 × 篇章</div>
+      <h1>把一片茶葉<br>讀成一個篇章 <em>。</em></h1>
+      <p class="desc">每一片茶葉，都收藏著一段土地的故事。<br>從香氣、風土到時間，慢慢讀懂台灣茶。</p>
+      <a href="#intro" class="scroll">SCROLL TO EXPLORE ↓</a>
+    </div>
+
+    <div class="hero-art" aria-hidden="true">
+      <div class="sun"></div>
+      <div class="orbit"></div>
+      <div class="leaf-main"></div>
+      <div class="leaf-small"></div>
+      <div class="drop"></div>
+      <span>NO. 01<br>THE FIRST PAGE</span>
+    </div>
+
+    <div class="hero-foot">
+      <span>EST. IN TAIWAN</span>
+      <span>01 — 05</span>
+      <span>SCROLL DOWN</span>
+    </div>
+  </section>
+
+  <!-- 品牌前言區塊 -->
+  <section class="intro reveal" id="intro">
+    <small>A NOTE FROM CHApter</small>
+    <p>茶不只是被沖泡的味道，<br>也是<b>土地寫給時間的一封信</b>。</p>
+  </section>
+
+  <!-- Chapter 01: 東方美人茶 -->
+  <section class="tea honey" id="honey">
+    <div class="num"><b>01</b><i></i>HONEY AROMA</div>
+    <div class="copy reveal">
+      <small>A LITTLE SWEETNESS FROM NATURE</small>
+      <h2>東方美人茶<em>HONEY AROMA TEA</em></h2>
+      <h3>甜香不是添加，<br>而是自然悄悄留下的記號。</h3>
+      <p>小綠葉蟬與茶樹相遇，讓茶葉在生長過程中產生細微變化。經過製茶工序，可能轉化為熟果、蜂蜜般的甜潤香氣。那份香氣，是自然共同完成的作品。</p>
+      <div class="tags" aria-label="風味與工藝標籤">
+        <span>小綠葉蟬</span>
+        <span>自然蜜甜</span>
+        <span>熟果香氣</span>
+      </div>
+      <div class="tag-note" aria-live="polite"></div>
+      <a href="#gangkou" class="next">NEXT CHAPTER ↓</a>
+    </div>
+    <div class="art honey-art reveal" aria-hidden="true">
+      <div class="orb"></div>
+      <div class="leaf"></div>
+      <div class="cup"></div>
+      <label>01 / THE NATURAL SWEETNESS</label>
+    </div>
+    <div class="sideword" aria-hidden="true">SWEET MEMORY</div>
+  </section>
+
+  <!-- Chapter 02: 港口茶 -->
+  <section class="tea gangkou" id="gangkou">
+    <div class="num"><b>02</b><i></i>OCEAN BREATH</div>
+    <div class="copy reveal">
+      <small>SALT BREEZE & MOUNTAIN MIST</small>
+      <h2>港口茶<em>GANGKOU TEA</em></h2>
+      <h3>海風吹過的坡地，<br>長出帶有鹽感的堅韌香氣。</h3>
+      <p>種植於接近海岸的丘陵，長期面對海風吹拂與日照。特殊的生長環境造就茶湯帶有些微鹹感與獨特礦物韻味，是台灣極具特色的在地茶款。</p>
+      <div class="tags" aria-label="風味與工藝標籤">
+        <span>海風滋養</span>
+        <span>微鹹韻味</span>
+        <span>稀有品種</span>
+      </div>
+      <div class="tag-note" aria-live="polite"></div>
+      <a href="#red" class="next">NEXT CHAPTER ↓</a>
+    </div>
+    <div class="art coast-art reveal" aria-hidden="true">
+      <div class="coast-sun"></div>
+      <div class="wave w1"></div>
+      <div class="wave w2"></div>
+      <div class="coast-leaf"></div>
+      <label>02 / OCEAN BREEZE</label>
+    </div>
+    <div class="sideword" aria-hidden="true">COASTAL SOUL</div>
+  </section>
+
+  <!-- Chapter 03: 紅烏龍 -->
+  <section class="tea red" id="red">
+    <div class="num"><b>03</b><i></i>DEEP ROAST</div>
+    <div class="copy reveal">
+      <small>AMBER GLOW OF TIME</small>
+      <h2>紅烏龍<em>RED OOLONG</em></h2>
+      <h3>重發酵的琥珀色，<br>揉合烏龍底蘊與紅茶甘甜。</h3>
+      <p>結合烏龍茶的高香與紅茶的醇厚，發酵程度極高。茶湯呈現迷人的琥珀紅褐色，帶有熟果香與柔和回甘，溫潤適合四季飲用。</p>
+      <div class="tags" aria-label="風味與工藝標籤">
+        <span>重發酵</span>
+        <span>琥珀茶湯</span>
+        <span>熟果甘甜</span>
+      </div>
+      <div class="tag-note" aria-live="polite"></div>
+      <a href="#tie" class="next">NEXT CHAPTER ↓</a>
+    </div>
+    <div class="art red-art reveal" aria-hidden="true">
+      <div class="red-disc"></div>
+      <div class="ribbon"></div>
+      <div class="red-cup"></div>
+      <label>03 / AMBER SPIRIT</label>
+    </div>
+    <div class="sideword" aria-hidden="true">TIME AGED</div>
+  </section>
+
+  <!-- Chapter 04: 鐵觀音 -->
+  <section class="tea tie" id="tie">
+    <div class="num"><b>04</b><i></i>FIRE & EARTH</div>
+    <div class="copy reveal">
+      <small>CHARACTER BORN OF FIRE</small>
+      <h2>鐵觀音<em>TIEGUANYIN</em></h2>
+      <h3>經過漫長焙火，<br>留下沉穩深邃的木質韻味。</h3>
+      <p>反覆烘焙的繁複工藝，賦予茶葉濃郁的觀音韻與微酸果香。厚重沉穩的香氣在口中擴散，是需要時間細細品味的茶中深韻。</p>
+      <div class="tags" aria-label="風味與工藝標籤">
+        <span>重焙火</span>
+        <span>觀音韻</span>
+        <span>木質香氣</span>
+      </div>
+      <div class="tag-note" aria-live="polite"></div>
+      <a href="#native" class="next">NEXT CHAPTER ↓</a>
+    </div>
+    <div class="art tie-art reveal" aria-hidden="true">
+      <div class="rings"></div>
+      <div class="roast r1"></div>
+      <div class="roast r2"></div>
+      <div class="dark-leaf"></div>
+      <label>04 / ROASTED DEPTH</label>
+    </div>
+    <div class="sideword" aria-hidden="true">DEEP FOREST</div>
+  </section>
+
+  <!-- Chapter 05: 台灣原生茶 -->
+  <section class="tea native" id="native">
+    <div class="num"><b>05</b><i></i>WILD ROOT</div>
+    <div class="copy reveal">
+      <small>MEMORY OF THE MOUNTAINS</small>
+      <h2>台灣原生茶<em>NATIVE TEA</em></h2>
+      <h3>來自深山的原始基因，<br>寫著土地最古老的記憶。</h3>
+      <p>生長於中央山脈山林間的原生山茶，無需人工培育即蘊含強韌生命力。茶湯輕盈帶著薄荷與山林野生氣息，純粹而雋永。</p>
+      <div class="tags" aria-label="風味與工藝標籤">
+        <span>野生山茶</span>
+        <span>山林氣息</span>
+        <span>原生基因</span>
+      </div>
+      <div class="tag-note" aria-live="polite"></div>
+      <a href="#ending" class="next">FINAL PAGE ↓</a>
+    </div>
+    <div class="art native-art reveal" aria-hidden="true">
+      <div class="moon"></div>
+      <div class="stem"></div>
+      <div class="native-leaf l1"></div>
+      <div class="native-leaf l2"></div>
+      <div class="native-leaf l3"></div>
+      <label>05 / WILD NATURE</label>
+    </div>
+    <div class="sideword" aria-hidden="true">ANCIENT ROOT</div>
+  </section>
+
+  <!-- 頁尾與結尾區塊 -->
+  <footer class="ending" id="ending">
+    <div class="end-content reveal">
+      <small>THE END OF CHApter</small>
+      <div class="end-logo">CHApter</div>
+      <h2>一杯茶，<em>讀完一個故事。</em></h2>
+      <p>謝謝你與我們一起走過這五個茶香篇章。<br>願茶香繼續陪伴你的日常生活。</p>
+      <a href="#honey">RETURN TO CHAPTER 01 ↑</a>
+    </div>
+    <div class="footer-bottom">
+      <span>© CHApter TEA PROJECT</span>
+      <span>DESIGNED FOR TEA LOVERS</span>
+      <span>TAIWAN TEA CULTURE</span>
+    </div>
+  </footer>
+
+  <script>
+  {
+    document.documentElement.classList.add('js-ready');
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    /* 1. 頂部閱讀進度條 */
+    const progressBar = document.querySelector('.progress');
+    function updateProgress() {
+      if (!progressBar) return;
+      const scrollTop = window.scrollY;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const percent = docHeight > 0 ? Math.min(100, (scrollTop / docHeight) * 100) : 0;
+      progressBar.style.width = `${percent}%`;
+    }
+    window.addEventListener('scroll', updateProgress, { passive: true });
+    updateProgress();
+
+    /* 2. 捲動進場敘事動畫（Scroll Reveal） */
+    const revealElements = document.querySelectorAll('.reveal');
+    if (prefersReducedMotion || !('IntersectionObserver' in window)) {
+      revealElements.forEach((el) => el.classList.add('is-visible'));
+    } else {
+      const revealObserver = new IntersectionObserver(
+        (entries, observer) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('is-visible');
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.14, rootMargin: '0px 0px -40px 0px' }
+      );
+      revealElements.forEach((el) => revealObserver.observe(el));
+    }
+
+    /* 3. 風味標籤互動：展開品飲筆記與沖泡參數 */
+    const tastingNotes = {
+      '小綠葉蟬': {
+        brew: '水溫 85°C · 浸泡 50 秒',
+        desc: '茶芽經小綠葉蟬吸食（俗稱「著涎」）後啟動防禦機制，促使茶多酚轉化為天然單萜烯醇，成就獨特蜜香靈魂。'
+      },
+      '自然蜜甜': {
+        brew: '水溫 85°C · 浸泡 50 秒',
+        desc: '不經任何人工燻香，茶湯入口帶有龍眼花蜜般的清甜滑順，冷泡 6 小時更能凸顯細緻甜韻。'
+      },
+      '熟果香氣': {
+        brew: '水溫 85°C · 浸泡 55 秒',
+        desc: '重萎凋與 60%～70% 發酵賦予茶葉類似水蜜桃與熟蘋果的溫潤果香，尾韻乾淨無澀感。'
+      },
+      '海風滋養': {
+        brew: '水溫 95°C · 浸泡 45 秒',
+        desc: '生長於屏東滿州沿海丘陵，終年受落山風與太平洋水氣吹拂，葉片厚實、果膠質含量極高。'
+      },
+      '微鹹韻味': {
+        brew: '水溫 95°C · 浸泡 45 秒',
+        desc: '海風帶來的微量礦物質附著於茶園土壤，使金黃茶湯在甘甜之中隱含一抹耐人尋味的淡雅海鹽感。'
+      },
+      '稀有品種': {
+        brew: '水溫 95°C · 浸泡 50 秒',
+        desc: '由早期移居恆春半島的先民引種馴化，歷經百年風土演替形成台灣最南端獨有的風土茶款。'
+      },
+      '重發酵': {
+        brew: '水溫 95°C · 浸泡 50 秒',
+        desc: '結合烏龍茶的攪拌揉捻與紅茶的充分發酵工藝，大幅降低苦澀感，對腸胃溫和且極耐沖泡。'
+      },
+      '琥珀茶湯': {
+        brew: '水溫 95°C · 浸泡 50 秒',
+        desc: '茶湯澄澈明亮如紅寶石與琥珀交融，熱飲醇厚暖胃，冰鎮後亦不失茶香層次。'
+      },
+      '熟果甘甜': {
+        brew: '水溫 95°C · 浸泡 55 秒',
+        desc: '中度烘焙鎖住高發酵轉化出的熟梅與桂圓甜香，飲後喉頭留有持久圓潤的甘甜餘韻。'
+      },
+      '重焙火': {
+        brew: '水溫 100°C · 浸泡 45 秒',
+        desc: '反覆多次文火慢焙，將茶葉水分與青澀感徹底轉化為深沉穩重的炭焙焦糖與堅果香氣。'
+      },
+      '觀音韻': {
+        brew: '水溫 100°C · 浸泡 45 秒',
+        desc: '傳統布球揉捻成半球型緊結茶乾，沖泡後展現「醇、厚、甘、潤」並帶微弱果酸的經典韻味。'
+      },
+      '木質香氣': {
+        brew: '水溫 100°C · 浸泡 50 秒',
+        desc: '長時間烘焙使茶多酚轉化出如老檜木與乾燥龍眼殼般的沉穩氣息，適合雨天或靜心慢飲。'
+      },
+      '野生山茶': {
+        brew: '水溫 90°C · 浸泡 55 秒',
+        desc: '台灣特有喬木型原生茶樹，深根紮入原始森林腐殖土中，葉大芽壯且富含天然兒茶素。'
+      },
+      '山林氣息': {
+        brew: '水溫 90°C · 浸泡 55 秒',
+        desc: '茶湯清透金黃，帶著宛如雨後森林的淡雅薄荷涼感與野花清香，口感純淨空靈。'
+      },
+      '原生基因': {
+        brew: '水溫 90°C · 浸泡 60 秒',
+        desc: '保留數萬年演化的原始物種基因，不施化肥與農藥自然生長，每一口都是台灣山林最真實的記憶。'
+      }
+    };
+
+    document.querySelectorAll('.copy').forEach((copyBlock) => {
+      const tags = copyBlock.querySelectorAll('.tags span');
+      const noteBox = copyBlock.querySelector('.tag-note');
+      if (!tags.length || !noteBox) return;
+
+      tags.forEach((tag) => {
+        tag.setAttribute('role', 'button');
+        tag.setAttribute('tabindex', '0');
+        tag.setAttribute('aria-expanded', 'false');
+
+        const toggleNote = () => {
+          const label = tag.textContent.trim();
+          const data = tastingNotes[label];
+          if (!data) return;
+
+          const isAlreadyActive = tag.classList.contains('is-active');
+
+          tags.forEach((t) => {
+            t.classList.remove('is-active');
+            t.setAttribute('aria-expanded', 'false');
+          });
+
+          if (isAlreadyActive) {
+            noteBox.classList.remove('is-open');
+          } else {
+            tag.classList.add('is-active');
+            tag.setAttribute('aria-expanded', 'true');
+            noteBox.innerHTML = `
+              <div class="tag-note-head">
+                <strong>${label}</strong>
+                <span>${data.brew}</span>
+              </div>
+              <p>${data.desc}</p>
+            `;
+            noteBox.classList.add('is-open');
+          }
+        };
+
+        tag.addEventListener('click', toggleNote);
+        tag.addEventListener('keydown', (e) => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            toggleNote();
+          }
+        });
+      });
+    });
+
+    /* 4. 自訂動態茶露鼠標 */
+    const dot = document.querySelector('.cursor-dot');
+    const ring = document.querySelector('.cursor-ring');
+
+    if (dot && ring) {
+      let mouseX = window.innerWidth / 2;
+      let mouseY = window.innerHeight / 2;
+      let ringX = mouseX;
+      let ringY = mouseY;
+      let angle = 45;
+
+      window.addEventListener('mousemove', (e) => {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+        dot.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0) rotate(${angle}deg)`;
+      });
+
+      function animateCursor() {
+        ringX += (mouseX - ringX) * 0.16;
+        ringY += (mouseY - ringY) * 0.16;
+        ring.style.transform = `translate3d(${ringX}px, ${ringY}px, 0)`;
+        requestAnimationFrame(animateCursor);
+      }
+      animateCursor();
+
+      const interactiveElements = document.querySelectorAll('a, button, .tags span');
+      interactiveElements.forEach((el) => {
+        el.addEventListener('mouseenter', () => {
+          ring.classList.add('is-hover');
+          dot.classList.add('is-hover');
+          angle = 90;
+          dot.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0) rotate(${angle}deg)`;
+        });
+        el.addEventListener('mouseleave', () => {
+          ring.classList.remove('is-hover');
+          dot.classList.remove('is-hover');
+          angle = 45;
+          dot.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0) rotate(${angle}deg)`;
+        });
+      });
+    }
+  }
+  </script>
+</body>
+</html>
